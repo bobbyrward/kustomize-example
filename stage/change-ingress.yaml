@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mmshost-ingress
+  namespace: mms-app
+  annotations:
+    alb.ingress.kubernetes.io/tags: Environment=Staging,Env=STAGING,ApplicationName=mms-app
+spec:
+  rules:
+    - host: staging-mms.my-domain.com
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: mmshost
+              servicePort: 8086

@@ -3,3 +3,4 @@ bases:
 namePrefix: stage-
 patchesStrategicMerge:
   - change-volume-handle.yaml
+  - change-ingress.yaml
